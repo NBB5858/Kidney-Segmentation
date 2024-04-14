@@ -47,8 +47,7 @@ rotated and flipped versions of each image tile. It also sliced the kidney along
 for some view, the pixel was classified as belonging to a blood vessel.
 
 ## Conclusion
-Below is an example of segmentation mask produced during validation. The challenge was a great way to 
-dive into an area that I previously knew nothing about, and develop working knowledge in a short period of time. Plus,
+The challenge was a great way to dive into an area that I previously knew nothing about, and develop working knowledge in a short period of time. Plus,
 it's pretty satisfying to see some of the segmentation masks produced during validation:
 ![](Other/example.png)
 
