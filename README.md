@@ -25,7 +25,7 @@ The pre-trained models and the final models tuned on the kidney segmentation mas
 For training, there were segmentations for 3 kidneys provided. However, only 2 had accurate labellings, whereas the third was sparsely segmented at 65%.  I only used the 
 complete segmentations for training, though it would have been interesting to test approaches using pseudo-labeling for the sparsely segmented kidney.
 The effective amount of training data could be increased by building an image augmentation pipeline consisting of rotations, changes in brightness, etc., which I did with the 
-[albumentations library](https://albumentations.ai/).  Another trick for expanding the training set was to take the stack of 2d kidney images (originally sliced along the z axis), stack them 
+[albumentations library](https://albumentations.ai/).  Another trick for expanding the training set was to take the set of 2d kidney images (originally sliced along the z axis), stack them 
 together, and then slice the resulting 3d block in the x and y directions, with these new images used for training as well.  In addition, to ensure the model was flexible enough to handle input images of 
 varying size, I broke each 2d image into a set of 512x512 pixel tiles, which were fed into the model for training.
 
