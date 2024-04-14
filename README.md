@@ -31,8 +31,7 @@ varying size, I broke each 2d image into a set of 512x512 pixel tiles, which wer
 
 Choosing a proper loss function also turned out to be critical.  The simplest choice was 
 binary cross entropy, as this is essentially a pixel-wise classification problem. However, this turned out to not be a
-good proxy for the competition metric, [surface dice](https://github.com/google-deepmind/surface-distance).  Often, an incremental improvement on BCE would lead to a no improvement or a worsening of surface dice, _even when evaluating on just the training set itself_. Some alternatives I tried were [focal loss](https://arxiv.org/abs/1708.02002) and [dice loss](https://arxiv.org/abs/1707.03237), with the latter providing the best proxy for 
-surface dice.
+good proxy for the competition metric, [surface dice](https://github.com/google-deepmind/surface-distance).  Often, an incremental improvement on BCE would lead to a no improvement or a worsening of surface dice, _even when evaluating on just the training set itself_. Some alternatives I tried were [focal loss](https://arxiv.org/abs/1708.02002) and [dice loss](https://arxiv.org/abs/1707.03237), with the latter yielding the best results.
 
 For validation, one simple approach was to train on one completely segmented kidney, and then to do validation on the second completely segmented kidney. However, this turned out to 
 give a very poor estimate for the test error.  This was evident because it was relatively easy to build a model which performed well on the training kidney and the validation kidney, but then 
